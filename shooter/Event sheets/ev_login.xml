@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ev_login</name>
+    <events>
+        <event-block sid="186534282970649">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="222024543648735" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">btn_play</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="737825469163856">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="616414233632662" type="txt_player_game">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="252926843648188" type="MessageGame">
+                            <param id="0" name="Text">&quot;Nickname cannot be empty&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="171569839865795">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="776613011281407" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="560831096362083" type="System">
+                            <param id="0" name="Variable">GAME_PLAYER_NAME</param>
+                            <param id="1" name="Value">txt_player_game.Text</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="624245076886332" type="System">
+                            <param id="0" name="Layout">game</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="629420549704179">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="949057108762736" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="281423392308418" type="txt_player_game">
+                    <param id="0" name="Text">GAME_PLAYER_NAME</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
